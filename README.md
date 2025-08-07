@@ -53,6 +53,7 @@ com.pro/
 │   ├── LLMService.java           # Connects to Ollama for LLaMA responses
 │   ├── MilvusService.java        # Handles vector DB operations
 │   └── MilvusFileIndexer.java    # Indexes files into Milvus
+│   └── MainApp.java              # Main class – starts the RAG system and launches GUI
 
 ````
 
