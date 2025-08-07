@@ -68,7 +68,6 @@ com.pro/
 - LLaMA model pulled via Ollama:
   ```bash
   ollama pull llama3
-````
 
 ---
 
@@ -132,4 +131,4 @@ com.pro/
 
 This project is open for educational purposes only.
 
-```
+
