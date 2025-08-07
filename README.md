@@ -110,6 +110,11 @@ com.pro/
 
 ---
 
+## 📸 GUI Preview
+
+![WhatsApp Image 2025-08-07 at 20 40 02_cfff4616](https://github.com/user-attachments/assets/4c05bc7a-02c9-4ab8-a559-29a0e0ef6f7c)
+
+---
 ## 📌 Future Improvements
 
 * Add support for PDF/Word document indexing.
