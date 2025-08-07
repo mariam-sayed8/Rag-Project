@@ -1,0 +1,39 @@
+Namasoft is a software company specialized in enterprise business solutions.
+The company is based in Egypt and serves clients in the MENA region.
+It was founded to provide modern ERP systems tailored to Arab markets.
+Namasoft focuses on flexibility, scalability, and user-friendly interfaces.
+Their flagship product is NAMA ERP, a modular enterprise resource planning system.
+NAMA ERP covers various domains including finance, HR, inventory, CRM, and manufacturing.
+The system supports Arabic and English, making it bilingual and regionally optimized.
+Namasoft ensures compliance with local tax regulations and accounting standards.
+They offer both cloud and on-premise deployment models.
+Their solutions are used by small, medium, and large enterprises.
+
+Namasoft emphasizes rapid implementation and post-deployment support.
+They provide technical training, documentation, and dedicated customer care.
+Their software architecture is built with modern multi-tier design.
+Security and data protection are among their top priorities.
+Namasoft integrates with external systems like banks, payroll services, and e-commerce platforms.
+
+The company relies on a strong team of engineers and ERP consultants.
+They continuously update their platform based on market needs and client feedback.
+Their R&D team ensures the product stays competitive and up-to-date.
+Namasoft also offers mobile access to key ERP modules for decision-makers on the go.
+Clients can customize dashboards and reporting tools to match their business KPIs.
+
+In terms of technology, Namasoft uses modern frameworks and tools.
+They develop mainly in C#, .NET, and ASP.NET Core.
+For database systems, they use Microsoft SQL Server.
+Their frontend components utilize HTML5, JavaScript, and Angular.
+They apply RESTful APIs to enable integration and microservices.
+
+They follow Agile methodologies for iterative development and fast delivery.
+Source control and CI/CD are implemented using Git and Azure DevOps.
+They prioritize clean code, performance optimization, and maintainability.
+Namasoft frequently organizes webinars and ERP workshops.
+They aim to help companies digitally transform their operations and grow.
+
+With over 15 years in the ERP market, Namasoft has built strong industry expertise.
+Their software is used in sectors like trading, manufacturing, healthcare, and education.
+Namasoft believes in building long-term relationships with clients based on trust and results.
+They continue to expand their presence across the Arab world.
