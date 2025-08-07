@@ -76,8 +76,8 @@ com.pro/
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/your-username/namasoft-ai-assistant.git
-   cd namasoft-ai-assistant
+   git clone https://github.com/mariam-sayed8/Rag-Project
+   cd Rag-Project
    ```
 
 2. Build and run:
