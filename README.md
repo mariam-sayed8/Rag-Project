@@ -1,5 +1,4 @@
-```markdown
-# 🤖 Namasoft AI Assistant
+## 🤖 Namasoft AI Assistant
 
 An interactive Java-based AI assistant that leverages **Retrieval-Augmented Generation (RAG)** to answer user questions based on documents from Namasoft. The system uses **LangChain4j**, **Milvus** for vector storage, and **LLaMA models** (via Ollama) to generate accurate and context-based answers.
 
