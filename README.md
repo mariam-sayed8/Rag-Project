@@ -46,14 +46,14 @@ This project allows users to:
 
 com.pro/
 │
-│         
-├── gui/   
-│   ├── MainGUI.java                  # GUI components (JFrame, Panels)
+├── gui/
+│   ├── MainGUI.java              # GUI components (JFrame, Panels)
+│
 ├── services/
-│   ├── EmbeddingService.java  # Converts text to vector embeddings
-│   ├── LLMService.java        # Connects to Ollama for LLaMA responses
-│   ├── MilvusService.java     # Handles vector DB operations
-│   └── MilvusFileIndexer.java # Indexes files into Milvus
+│   ├── EmbeddingService.java     # Converts text to vector embeddings
+│   ├── LLMService.java           # Connects to Ollama for LLaMA responses
+│   ├── MilvusService.java        # Handles vector DB operations
+│   └── MilvusFileIndexer.java    # Indexes files into Milvus
 
 ````
 
@@ -62,8 +62,9 @@ com.pro/
 ## 🧪 How to Run
 
 ### ✅ Prerequisites:
+
 - Java 17+
-- Ollama installed and running: https://ollama.com/
+- Ollama installed and running: [https://ollama.com/](https://ollama.com/)
 - Milvus installed locally or via Docker
 - LLaMA model pulled via Ollama:
   ```bash
@@ -91,7 +92,7 @@ com.pro/
 3. Optionally launch GUI:
 
    ```bash
-   java -cp target/classes com.mariam.gui.AppGUI
+   java -cp target/classes com.pro.gui.MainGUI
    ```
 
 ---
@@ -100,7 +101,8 @@ com.pro/
 
 1. User uploads or indexes a text file about Namasoft.
 2. User enters a natural question like:
-   *"What ERP modules does Namasoft provide?"*
+
+   > *"What ERP modules does Namasoft provide?"*
 3. The system:
 
    * Embeds the question.
@@ -121,14 +123,14 @@ com.pro/
 
 ## 👩‍💻 Developed By
 
-**Mariam Mohamed Sayed**
-**Karima Mahmoud**
-**Ahmed Khaled**
+* **Mariam Mohamed Sayed**
+* **Karima Mahmoud**
+* **Ahmed Khaled**
 
 ---
 
 ## 📜 License
 
-This Project Is Open For Education Propose.
+This project is open for educational purposes only.
 
 ```
