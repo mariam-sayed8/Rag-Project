@@ -112,7 +112,7 @@ com.pro/
 
 ## 📸 GUI Preview
 
-![WhatsApp Image 2025-08-07 at 20 40 02_cfff4616](https://github.com/user-attachments/assets/4c05bc7a-02c9-4ab8-a559-29a0e0ef6f7c)
+<img width="791" height="589" alt="Screenshot 2025-08-07 203946" src="https://github.com/user-attachments/assets/0d292ea2-5e8d-4e69-b184-f1fd13980893" />
 
 ---
 ## 📌 Future Improvements
