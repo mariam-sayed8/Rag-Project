@@ -1,60 +1,78 @@
 package com.pro.services;
 
-// Import LangChain4j classes for embedding and segment storage
 import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.data.segment.TextSegment;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 
-// Import Java standard libraries for file operations and collections
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
-// Service class responsible for reading text files, creating embeddings, and storing them in Milvus
+/**
+  Service class responsible for reading text files,
+  splitting them into smaller chunks, generating embeddings,
+  and storing them in Milvus.
+ */
 public class MilvusFileIndexer {
 
-    // The model used to convert text into embeddings (e.g., Ollama, OpenAI, etc.)
+    private static final Logger logger = Logger.getLogger(MilvusFileIndexer.class.getName());
+
+    // Embedding model used to convert text chunks into vector embeddings
     private final EmbeddingModel embeddingModel;
 
-    // The storage where embeddings and their original text segments will be saved
+    // Storage backend (Milvus) for embeddings and text segments
     private final EmbeddingStore<TextSegment> store;
 
-    // Constructor: initializes the indexer with a specific embedding model and Milvus store
+    // Default chunk size (number of characters per chunk)
+    private final int chunkSize = 500;
+
+    // Overlap between consecutive chunks (characters)
+    private final int chunkOverlap = 100;
+
     public MilvusFileIndexer(EmbeddingModel embeddingModel, EmbeddingStore<TextSegment> store) {
         this.embeddingModel = embeddingModel;
         this.store = store;
     }
 
-    // Reads a file, splits it into paragraphs, embeds them, and stores them in Milvus
+    /**
+      Reads the file, splits it into chunks, generates embeddings in batch, and stores them in Milvus.
+     */
     public void indexFile(String filePath) throws IOException {
-        // Read the full content of the file into a single string
-        String fullText = new String(Files.readAllBytes(Paths.get(filePath)));
+        // Read file content using UTF-8 to support Arabic and English
+        String fullText = new String(Files.readAllBytes(Paths.get(filePath)), StandardCharsets.UTF_8);
 
-        // Split the content into paragraphs based on double newlines
-        String[] paragraphs = fullText.split("\\n\\s*\\n");
+        // Split the text into smaller chunks for better retrieval
+        List<String> chunks = splitIntoChunks(fullText);
 
-        // List to hold each segment created from paragraphs
+        // Convert chunks into TextSegments
         List<TextSegment> segments = new ArrayList<>();
-
-        // Loop through each paragraph
-        for (String paragraph : paragraphs) {
-            String trimmed = paragraph.trim();  // Remove leading/trailing whitespace
-
-            if (!trimmed.isEmpty()) {
-                // Create a TextSegment object from the paragraph
-                TextSegment segment = TextSegment.from(trimmed);
-
-                // Generate an embedding for the segment and add it to the store
-                store.add(embeddingModel.embed(segment).content(), segment);
-
-                // Optionally store the segment in a local list
-                segments.add(segment);
-            }
+        for (String chunk : chunks) {
+            segments.add(TextSegment.from(chunk));
         }
 
-        // Log confirmation after indexing is complete
-        System.out.println("✔ File indexed successfully into Milvus.");
+        // Generate embeddings for all segments in one batch (faster)
+        store.addAll(embeddingModel.embedAll(segments).content(), segments);
+
+        logger.info("✔ File indexed successfully into Milvus. Total chunks: " + segments.size());
+    }
+
+    /**
+      Splits a large text into overlapping chunks to preserve context.
+     */
+    private List<String> splitIntoChunks(String text) {
+        List<String> chunks = new ArrayList<>();
+        int start = 0;
+
+        while (start < text.length()) {
+            int end = Math.min(start + chunkSize, text.length());
+            chunks.add(text.substring(start, end));
+            start += (chunkSize - chunkOverlap);
+        }
+
+        return chunks;
     }
 }

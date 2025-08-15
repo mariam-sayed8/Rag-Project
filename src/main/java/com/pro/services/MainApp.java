@@ -3,7 +3,7 @@
  * Main class for the RAG system using LangChain4j, Milvus, and Ollama
  */
 
-package com.pro;
+package com.pro.services;
 
 import com.pro.services.EmbeddingService;
 import com.pro.services.LLMService;

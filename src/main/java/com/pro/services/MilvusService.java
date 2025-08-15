@@ -20,7 +20,7 @@ public class MilvusService {
     public MilvusService() {
         this.store = MilvusEmbeddingStore.builder()
                 .uri("http://localhost:19530")     // Local URI where Milvus is running
-                .collectionName("namasoft_base")
+                .collectionName("namasoft")
                 .dimension(384)                    // Dimension of the embedding vectors
                 .build();
     }
